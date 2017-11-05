@@ -1,11 +1,12 @@
 const app = require('./src/app');
 
 const port = process.env.PORT || '3000';
-app.set('port', port);
-
-app.listen(port);
 
 /* eslint-disable no-console */
+app.listen(port, () => {
+  console.error(`Listening on port ${port}`);
+});
+
 app.on('error', (error) => {
   if (error.syscall !== 'listen') {
     throw error;
@@ -25,11 +26,5 @@ app.on('error', (error) => {
     default:
       throw error;
   }
-});
-
-app.on('listening', () => {
-  const addr = app.address();
-  const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
-  console.error(`Listening on ${bind}`);
 });
 /* eslint-enable no-console */
