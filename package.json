@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cristianopacheco/nodeapi_sequelize.git"
+    "url": "git+https://github.com/cristianopacheco/node_api_sequelize.git"
   },
   "engines": {
     "node": "~8.4.0",
