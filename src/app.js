@@ -1,14 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const helmet = require('helmet');
 require('dotenv').config();
 const routes = require('./routes');
 const datasource = require('./config/datasource');
 
 const app = express();
 
+app.use(helmet());
+
 app.datasource = datasource();
 
 app.use(bodyParser.json());
+
 app.use('/', routes);
 
 // not found
